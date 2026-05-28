@@ -40,6 +40,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DYNAMIC_KEYMAP_LAYER_COUNT 6
 
 #define COMBO_TERM 50
+#define COMBO_COUNT 10
 #define COMBO_MUST_TAP_PER_COMBO
 
 #define TAPPING_TERM 200
