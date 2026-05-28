@@ -95,7 +95,7 @@ const uint16_t PROGMEM my_ent[] = {KC_V, KC_M, COMBO_END};
 const uint16_t PROGMEM my_int5[] = {KC_V, KC_B, COMBO_END}; //muhenkan
 const uint16_t PROGMEM my_int4[] = {KC_N, KC_M, COMBO_END}; //henkan
 const uint16_t PROGMEM my_alf4[] = {KC_Q, KC_P, COMBO_END}; 
-uint16_t COMBO_LEN = COMBO_LENGTH;
+uint16_t COMBO_LEN = COM_LENGTH;
 
 combo_t key_combos[] = {
 [COM_TAB] = COMBO(my_tab, KC_TAB),
