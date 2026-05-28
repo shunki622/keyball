@@ -71,6 +71,18 @@ void oledkit_render_info_user(void) {
 #endif
 
 #ifdef COMBO_ENABLE
+enum combos{
+  COM_TAB,
+  COM_ESC,
+  COM_HOME,
+  COM_END,
+  COM_BSPC,
+  COM_DEL,
+  COM_ENT,
+  COM_INT5,
+  COM_INT4,
+};
+
 const uint16_t PROGMEM my_tab[] = {KC_Q, KC_W, COMBO_END};
 const uint16_t PROGMEM my_esc[] = {KC_O, KC_P, COMBO_END};
 const uint16_t PROGMEM my_home[] = {KC_Z, KC_X, COMBO_END};
@@ -82,14 +94,14 @@ const uint16_t PROGMEM my_int5[] = {KC_V, KC_B, COMBO_END}; //muhenkan
 const uint16_t PROGMEM my_int4[] = {KC_N, KC_M, COMBO_END}; //henkan
 
 combo_t key_combos[] = {
-COMBO(my_tab, KC_TAB),
-COMBO(my_esc, KC_ESC),
-COMBO(my_home, KC_HOME),
-COMBO(my_end, KC_END),
-COMBO(my_bspc, KC_BSPC),
-COMBO(my_del, KC_DEL),
-COMBO(my_ent, KC_ENT),
-COMBO(my_int5, KC_INT5),
-COMBO(my_int4, KC_INT4),
+[COM_TAB] = COMBO(my_tab, KC_TAB),
+[COM_ESC] = COMBO(my_esc, KC_ESC),
+[COM_HOME] = COMBO(my_home, KC_HOME),
+[COM_END] = COMBO(my_end, KC_END),
+[COM_BSPC] = COMBO(my_bspc, KC_BSPC),
+[COM_DEL] = COMBO(my_del, KC_DEL),
+[COM_ENT] = COMBO(my_ent, KC_ENT),
+[COM_INT5] = COMBO(my_int5, KC_INT5),
+[COM_INT4] = COMBO(my_int4, KC_INT4),
 };
 #endif
