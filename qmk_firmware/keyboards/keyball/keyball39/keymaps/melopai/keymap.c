@@ -81,6 +81,7 @@ enum combos{
   COM_ENT,
   COM_INT5,
   COM_INT4,
+  COM_ALF4,
 };
 
 const uint16_t PROGMEM my_tab[] = {KC_Q, KC_W, COMBO_END};
@@ -92,6 +93,7 @@ const uint16_t PROGMEM my_del[] = {KC_COMM, KC_DOT, COMBO_END};
 const uint16_t PROGMEM my_ent[] = {KC_V, KC_M, COMBO_END};
 const uint16_t PROGMEM my_int5[] = {KC_V, KC_B, COMBO_END}; //muhenkan
 const uint16_t PROGMEM my_int4[] = {KC_N, KC_M, COMBO_END}; //henkan
+const uint16_t PROGMEM my_alf4[] = {KC_Q, KC_P, COMBO_END}; 
 
 combo_t key_combos[] = {
 [COM_TAB] = COMBO(my_tab, KC_TAB),
@@ -101,7 +103,8 @@ combo_t key_combos[] = {
 [COM_BSPC] = COMBO(my_bspc, KC_BSPC),
 [COM_DEL] = COMBO(my_del, KC_DEL),
 [COM_ENT] = COMBO(my_ent, KC_ENT),
-[COM_INT5] = COMBO(my_int5, KC_INT5),
-[COM_INT4] = COMBO(my_int4, KC_INT4),
+[COM_INT5] = COMBO(my_int5, KC_MHEN),
+[COM_INT4] = COMBO(my_int4, KC_HENK),
+[COM_ALF4] = COMBO(my_alf4, LALT(KC_F4)),
 };
 #endif
