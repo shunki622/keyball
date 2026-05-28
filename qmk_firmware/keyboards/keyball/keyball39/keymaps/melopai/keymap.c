@@ -27,7 +27,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_Q     , KC_W     , KC_E     , KC_R     , KC_T     ,                            KC_Y     , KC_U     , KC_I     , KC_O     , KC_P     ,
     KC_A     , KC_S     , KC_D     , KC_F     , KC_G     ,                            KC_H     , KC_J     , KC_K     , KC_L     , KC_MINS  ,
     KC_Z     , KC_X     , KC_C     , KC_V     , KC_B     ,                            KC_N     , KC_M     , KC_COMM  , KC_DOT   , KC_SLSH  ,
-    KC_LCTL  , KC_LGUI  , KC_LALT  ,LSFT_T(KC_LNG2),LT(1,KC_SPC),LT(3,KC_LNG1),KC_BSPC,LT(2,KC_ENT),LSFT_T(KC_LNG2),KC_RALT,KC_RGUI, KC_RSFT
+    KC_LCTL  , KC_LGUI  , KC_LALT  ,LSFT_T(KC_INT5),LT(1,KC_SPC),LT(3,KC_INT4),KC_BSPC,LT(2,KC_ENT),LSFT_T(KC_LNG2),KC_RALT,KC_RGUI, KC_RSFT
   ),
 
   [1] = LAYOUT_universal(
@@ -70,43 +70,55 @@ void oledkit_render_info_user(void) {
 }
 #endif
 
-#ifdef COMBO_ENABLE
-enum combos{
-  COM_TAB,
-  COM_ESC,
-  COM_HOME,
-  COM_END,
-  COM_BSPC,
-  COM_DEL,
-  COM_ENT,
-  COM_INT5,
-  COM_INT4,
-  COM_ALF4,
-  COM_LENGTH
-};
 
-const uint16_t PROGMEM my_tab[] = {KC_Q, KC_W, COMBO_END};
-const uint16_t PROGMEM my_esc[] = {KC_O, KC_P, COMBO_END};
-const uint16_t PROGMEM my_home[] = {KC_Z, KC_X, COMBO_END};
-const uint16_t PROGMEM my_end[] = {KC_DOT, KC_SLSH, COMBO_END};
-const uint16_t PROGMEM my_bspc[] = {KC_I, KC_O, COMBO_END};
-const uint16_t PROGMEM my_del[] = {KC_COMM, KC_DOT, COMBO_END};
-const uint16_t PROGMEM my_ent[] = {KC_V, KC_M, COMBO_END};
-const uint16_t PROGMEM my_int5[] = {KC_V, KC_B, COMBO_END}; //muhenkan
-const uint16_t PROGMEM my_int4[] = {KC_N, KC_M, COMBO_END}; //henkan
-const uint16_t PROGMEM my_alf4[] = {KC_Q, KC_P, COMBO_END}; 
-uint16_t COMBO_LEN = COM_LENGTH;
 
+const uint16_t PROGMEM test_combo1[] = {KC_A, KC_B, COMBO_END};
+const uint16_t PROGMEM test_combo2[] = {KC_C, KC_D, COMBO_END};
 combo_t key_combos[] = {
-[COM_TAB] = COMBO(my_tab, KC_TAB),
-[COM_ESC] = COMBO(my_esc, KC_ESC),
-[COM_HOME] = COMBO(my_home, KC_HOME),
-[COM_END] = COMBO(my_end, KC_END),
-[COM_BSPC] = COMBO(my_bspc, KC_BSPC),
-[COM_DEL] = COMBO(my_del, KC_DEL),
-[COM_ENT] = COMBO(my_ent, KC_ENT),
-[COM_INT5] = COMBO(my_int5, KC_INT5),
-[COM_INT4] = COMBO(my_int4, KC_INT4),
-[COM_ALF4] = COMBO(my_alf4, LALT(KC_F4)),
+    COMBO(test_combo1, KC_ESC),
+    COMBO(test_combo2, LCTL(KC_Z)), // keycodes with modifiers are possible too!
 };
-#endif
+
+
+
+
+// #ifdef COMBO_ENABLE
+// enum combos{
+//   COM_TAB,
+//   COM_ESC,
+//   COM_HOME,
+//   COM_END,
+//   COM_BSPC,
+//   COM_DEL,
+//   COM_ENT,
+//   COM_INT5,
+//   COM_INT4,
+//   COM_ALF4,
+//   COM_LENGTH
+// };
+
+// const uint16_t PROGMEM my_tab[] = {KC_Q, KC_W, COMBO_END};
+// const uint16_t PROGMEM my_esc[] = {KC_O, KC_P, COMBO_END};
+// const uint16_t PROGMEM my_home[] = {KC_Z, KC_X, COMBO_END};
+// const uint16_t PROGMEM my_end[] = {KC_DOT, KC_SLSH, COMBO_END};
+// const uint16_t PROGMEM my_bspc[] = {KC_I, KC_O, COMBO_END};
+// const uint16_t PROGMEM my_del[] = {KC_COMM, KC_DOT, COMBO_END};
+// const uint16_t PROGMEM my_ent[] = {KC_V, KC_M, COMBO_END};
+// const uint16_t PROGMEM my_int5[] = {KC_V, KC_B, COMBO_END}; //muhenkan
+// const uint16_t PROGMEM my_int4[] = {KC_N, KC_M, COMBO_END}; //henkan
+// const uint16_t PROGMEM my_alf4[] = {KC_Q, KC_P, COMBO_END}; 
+// uint16_t COMBO_LEN = COM_LENGTH;
+
+// combo_t key_combos[] = {
+// [COM_TAB] = COMBO(my_tab, KC_TAB),
+// [COM_ESC] = COMBO(my_esc, KC_ESC),
+// [COM_HOME] = COMBO(my_home, KC_HOME),
+// [COM_END] = COMBO(my_end, KC_END),
+// [COM_BSPC] = COMBO(my_bspc, KC_BSPC),
+// [COM_DEL] = COMBO(my_del, KC_DEL),
+// [COM_ENT] = COMBO(my_ent, KC_ENT),
+// [COM_INT5] = COMBO(my_int5, KC_INT5),
+// [COM_INT4] = COMBO(my_int4, KC_INT4),
+// [COM_ALF4] = COMBO(my_alf4, LALT(KC_F4)),
+// };
+// #endif
